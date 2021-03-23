@@ -1,0 +1,23 @@
+.aside {
+    width: 15%;
+    background: #cb353d;
+
+    ul {
+        border: 1px solid black;
+
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            background: white;
+            width: 100%;
+
+            padding-top: 2.5px;
+            padding-bottom: 2.5px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

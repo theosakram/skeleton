@@ -1,0 +1,53 @@
+$colors: (
+    "primary": #0e3033,
+    "secondary": #f7931d,
+    "success": #5cb85d,
+    "danger": #d21a1a,
+);
+
+@mixin default-button {
+    height: 40px;
+    min-width: 70px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background: white;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+@each $name, $color in $colors {
+    .default-#{$name} {
+        @include default-button();
+
+        background: $color;
+        color: white;
+        border: none;
+    }
+
+    .outlined-#{$name} {
+        @include default-button();
+
+        color: $color;
+        border: 1px solid $color;
+    }
+
+    .text-#{$name} {
+        @include default-button();
+
+        border: none;
+        color: $color;
+    }
+
+    .default-default {
+        @include default-button();
+    }
+}
